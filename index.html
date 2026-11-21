@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>OfferGuard — Fake Job Offer Checker</title>
+<meta name="description" content="Check any job offer, recruiter message or overseas agent before you pay or share documents: 0-100 scam score, recruiter/domain checks, verification checklists, practice drills and an application tracker. Free, no account, works offline. English / Hindi / Malayalam.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1d4ed8">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="icon.svg" alt="" class="logo">
+    <div>
+      <div class="appname">OfferGuard</div>
+      <div class="tagline" data-i18n="tagline">Real jobs never ask you to pay.</div>
+    </div>
+  </div>
+  <div class="top-actions">
+    <select id="langSel" aria-label="Language">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ml">മലയാളം</option>
+    </select>
+    <button id="themeBtn" class="icon-btn" aria-label="Dark mode">🌙</button>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-view="home" class="tab active">🏠 <span data-i18n="nav_home">Home</span></button>
+  <button data-view="check" class="tab">🔍 <span data-i18n="nav_check">Check an offer</span></button>
+  <button data-view="verify" class="tab">✅ <span data-i18n="nav_verify">Verify</span></button>
+  <button data-view="drill" class="tab">🎭 <span data-i18n="nav_drill">Practice</span></button>
+  <button data-view="track" class="tab">📋 <span data-i18n="nav_track">Tracker</span></button>
+  <button data-view="help" class="tab">🆘 <span data-i18n="nav_help">Help</span></button>
+</nav>
+
+<main id="view" class="view"></main>
+
+<footer class="foot">
+  <span data-i18n="foot_note">Free forever · No account · Offers you paste are checked on this phone only · Made to protect job seekers</span>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('service-worker.js').catch(function(){}); }
+</script>
+</body>
+</html>
